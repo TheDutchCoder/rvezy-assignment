@@ -6,8 +6,8 @@
  * I have some notes and thoughts on performance for this:
  *  1. I would use SSR to render the initial page. Since the query is going to
  *     be cached anyway, you might as well fetch the initial set of data on the
- *     server and render everything. This means the cleint would receive a full
- *     set of data before hydrating, reuslting in no loaders being shown.
+ *     server and render everything. This means the client would receive a full
+ *     set of data before hydrating, resulting in no loaders being shown.
  *  2. I would use nuxt/image to do the heavy lifting on responsive images.
  *     Alternatively (or in combination with) a service like Thumbor or AWS
  *     Image Optimization, to generate appropriate sizes optimized for different
@@ -66,7 +66,7 @@ const changePage = (number: number) => {
   currentPage.value = number
 }
 
-// Whenever the page changes from the pagninator, fetch a new set of results.
+// Whenever the page changes from the paginator, fetch a new set of results.
 watch(() => currentPage.value, () => {
   fetchData()
 })
